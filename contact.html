@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modern Business Website</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    line-height:1.6;
+    color:#333;
+}
+
+header{
+    background:#0f172a;
+    color:white;
+    padding:20px 10%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:1.5rem;
+    font-weight:bold;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+}
+
+.hero{
+    height:90vh;
+    background:linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)),
+    url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=80");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+}
+
+.hero-content h1{
+    font-size:3rem;
+    margin-bottom:15px;
+}
+
+.hero-content p{
+    font-size:1.2rem;
+    margin-bottom:25px;
+}
+
+.btn{
+    background:#2563eb;
+    color:white;
+    padding:12px 25px;
+    text-decoration:none;
+    border-radius:5px;
+}
+
+section{
+    padding:70px 10%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:40px;
+    font-size:2rem;
+}
+
+.services{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:#f4f4f4;
+    padding:25px;
+    border-radius:10px;
+    text-align:center;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.about{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:center;
+}
+
+.about img{
+    width:100%;
+    border-radius:10px;
+}
+
+.contact-form{
+    max-width:600px;
+    margin:auto;
+}
+
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    padding:12px;
+    margin-bottom:15px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+.contact-form button{
+    width:100%;
+    padding:12px;
+    background:#2563eb;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+footer{
+    background:#0f172a;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+@media(max-width:768px){
+    .about{
+        grid-template-columns:1fr;
+    }
+
+    .hero-content h1{
+        font-size:2rem;
+    }
+
+    header{
+        flex-direction:column;
+        gap:15px;
+    }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <div class="logo">LUXE WOMEN</div>  &nbsp;
+
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="dresses.html">Dresses</a>
+        <a href="partywear.html">Party Wear</a>
+        <a href="accessories.html">Accessories</a>
+        <a href="footwear.html">Footwear</a>
+        <a href="contact.html">Contact</a>
+        
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h1>Build Your Fashion Idea </h1>
+        <p>Professional websites and digital solutions for your fashion .</p>
+        <a href="#contact" class="btn">Get Started</a>
+    </div>
+</section>
+
+<section id="services">
+    <h2 class="section-title">Our Services</h2>
+
+    <div class="services">
+        <div class="card">
+            <h3>Web Design</h3>
+            <p>Modern and responsive website design for all devices.</p>
+        </div>
+
+        <div class="card">
+            <h3>Development</h3>
+            <p>Fast, secure, and scalable web applications.</p>
+        </div>
+
+        <div class="card">
+            <h3>SEO</h3>
+            <p>Improve your online visibility and search rankings.</p>
+        </div>
+    </div>
+</section>
+
+<section id="about">
+    <h2 class="section-title">About Us</h2>
+
+    <div class="about">
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80" alt="Team">
+
+        <div>
+            <h3>We Create Amazing Experiences</h3>
+            <p>
+                Our team specializes in creating beautiful, high-performance
+                websites that help businesses grow online.
+            </p>
+            <br>
+            <p>
+                We focus on design, performance, and user experience to deliver
+                outstanding results.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2 class="section-title">Contact Us</h2>
+
+    <form class="contact-form" id="contactForm">
+        <input type="text" id="name" placeholder="Your Name" required>
+
+        <input type="email" id="email" placeholder="Your Email" required>
+
+        <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+<footer>
+    <p>&copy; 2026 MyWebsite. All Rights Reserved.</p>
+</footer>
+
+<script>
+document.getElementById("contactForm")
+.addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+
+    alert("Thank you, " + name + "! Your message has been received.");
+
+    this.reset();
+});
+</script>
+
+</body>
+</html>
